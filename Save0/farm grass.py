@@ -4,8 +4,6 @@
 ## This can be later expanded to plant and harvest other
 ## plants, but grass is free
 
-steps = get_world_size() * get_world_size()
-
 while True:
     if get_pos_y() == 0:
         move(East)

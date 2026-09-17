@@ -1,3 +1,4 @@
+## Functions:
 def check_ground():
     return get_ground_type()
 
@@ -13,7 +14,7 @@ def make_soil():
         till()
         
 def make_wet():
-    if check_water() < 1:
+    if check_water() < 0.5:
         if num_items(Items.water) > 0:
             use_item(Items.Water)
 
