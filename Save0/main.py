@@ -32,8 +32,8 @@ while True:
         if get_pos_y() != 0 and get_pos_y() != range(get_world_size())[-1] and get_pos_x() != 0 and get_pos_x() != range(get_world_size())[-1]:
             if resources[Items.Hay] > resources[Items.Wood] and resources[Items.Wood] >= get_cost(Entities.Carrot)[Items.Wood]:
                 if resources[Items.Wood] > resources[Items.Carrot] and resources[Items.Wood] >= get_cost(Entities.Carrot)[Items.Wood]:
-                    if resources[Items.Carrot] > resources[Items.Pumpkin] and resources[Items.Carrot] >= get_cost((Entities.Pumpkin * steps) * 2):
-                        max_pumpkin(steps)
+                    if resources[Items.Carrot] > resources[Items.Pumpkin] and resources[Items.Carrot] >= (get_cost(Entities.Pumpkin)[Items.Carrot] * steps) * 2:
+                        max_pumpkin(steps, petals_dict)
                     else:
                         plant_carrot()
                 else:
