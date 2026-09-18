@@ -1,7 +1,7 @@
 ## Imports:
 from grounds import fertilise
 
-def plant_wood(timber):
+def plant_wood():
     plant_tree = None
     plant_tree = check_tree_plantable(plant_tree)
 
