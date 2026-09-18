@@ -20,6 +20,7 @@ def harvest_pumpkin():
 
 def max_pumpkin(steps, petals_dict):
     biggy_p = False
+    dead_pumpkin = None
     while biggy_p == False:
         for i in range(steps):
             if get_entity_type() != Entities.Pumpkin:
@@ -29,10 +30,8 @@ def max_pumpkin(steps, petals_dict):
                     harvest()
                 plant_pumpkin()
                 dead_pumpkin = True
-            else:
-                dead_pumpkin = False
             advance()
-        if dead_pumpkin == False:
+        if dead_pumpkin != True:
             biggy_p = True
             rts()
             harvest()
