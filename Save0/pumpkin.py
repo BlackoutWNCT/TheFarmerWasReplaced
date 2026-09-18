@@ -18,18 +18,21 @@ def plant_pumpkin():
 def harvest_pumpkin():
     harvest()
 
-def max_pumpkin(steps):
+def max_pumpkin(steps, petals_dict):
     biggy_p = False
     while biggy_p == False:
         for i in range(steps):
-            if get_entity_type() == Entities.Sunflower:
-                harvest_sunflower()
-            elif get_entity_type() != Entities.Pumpkin:
-                harvest()
-            plant_pumpkin()
-            dead_pumpkin = True
+            if get_entity_type() != Entities.Pumpkin:
+                if get_entity_type() == Entities.Sunflower:
+                    harvest_sunflower(petals_dict)
+                else:
+                    harvest()
+                plant_pumpkin()
+                dead_pumpkin = True
+            else:
+                dead_pumpkin = False
             advance()
-        if dead_pumpkin == None:
+        if dead_pumpkin == False:
             biggy_p = True
             rts()
             harvest()
